@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        background-color: black;
+    }
+    @keyframes brilho {
+      0%, 100% {
+        position: relative;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-align: center;
+        font-size: 2rem;
+        font-family: 'century gothic';
+        color: #ffffff;
+        text-shadow: 0 0 5px #19baff,
+                     0 0 20px #19baff, 
+                     0 0 30px #19baff;
+        -webkit-box-reflect: below 0px linear-gradient(transparent, #0005);
+      }
+    }
+
+    @keyframes opaco {
+      0%, 100% {
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: 'century gothic';
+        color: #0e3742;
+        -webkit-box-reflect: below 0px linear-gradient(transparent, #0005);
+      }
+    }
+
+
+
+    .element {
+        position: relative;
+        font-weight: bold;
+        margin-top: 200px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-align: center;
+        font-size: 2rem;
+        font-family: 'century gothic';
+        color: #ffffff;
+        animation: brilho 1s ease-in-out infinite;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="element" id="animatedElement"> PHP não morreu</div>
+
+  <script>
+    const element = document.getElementById('animatedElement');
+
+    setInterval(() => {
+      element.classList.remove('class1');
+      element.classList.add('class2');
+      element.style.animation = 'none';
+      element.style.animation = 'opaco 0.5s ease-in-out infinite';
+    },500);
+
+    setInterval(() => {
+      element.classList.remove('class2');
+      element.classList.add('class1');
+      element.style.animation = 'none';
+      element.style.animation = 'brilho 1s ease-in-out infinite';
+    }, 1000);
+
+    setInterval(() => {
+      element.classList.remove('class1');
+      element.classList.add('class2');
+      element.style.animation = 'none';
+      element.style.animation = 'opaco 0.5s ease-in-out infinite';
+    },500);
+
+    setInterval(() => {
+      element.classList.remove('class2');
+      element.classList.add('class1');
+      element.style.animation = 'none';
+      element.style.animation = 'brilho 1s ease-in-out infinite';
+    }, 600);
+
+
+  </script>
+
+</body>
+</html>
